@@ -1,0 +1,22 @@
+steps:
+- name: "gcr.io/cloud-builders/docker"
+  args:
+  - "build"
+  - "-t"
+  - "gcr.io/kubernetes-143/cicd-run"
+  - "."
+- name: "gcr.io/cloud-builders/docker"
+  args:
+  - "image"
+  - "push"
+  - "gcr.io/kubernetes-143/cicd-run"
+- name: "gcr.io/kubernetes-143/gcloud"
+  args:
+  - "run"
+  - "deploy"
+  - "ci-cd-run"
+  - "--image"
+  - "gcr.io/kubernetes-143/cicd-run"
+  - "--region"
+  - "us-central1"
+  - "--allow-unauthenticated"
