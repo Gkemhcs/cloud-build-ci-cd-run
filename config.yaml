@@ -10,7 +10,7 @@ steps:
   - "image"
   - "push"
   - "gcr.io/kubernetes-143/cicd-run"
-- name: "gcr.io/kubernetes-143/gcloud"
+- name: "gcr.io/cloud-builders/gcloud"
   args:
   - "run"
   - "deploy"
