@@ -1,7 +1,7 @@
 const express=require("express")
 const app=express()
 app.get("/",(req,res)=>{
-res.send("i am running currently first version")
+res.send("welcome to my world version1.0")
 
 })
 
